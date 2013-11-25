@@ -21,5 +21,5 @@ requires:
   Const::Fast: 0
   Coro: 0
   String::Escape: 0
-  Sys::CPU: 0
-version: 0.02
+  Sys::Info: 0
+version: 0.03
