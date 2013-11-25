@@ -22,4 +22,4 @@ requires:
   Coro: 0
   String::Escape: 0
   Sys::CPU: 0
-version: 0.01
+version: 0.02
