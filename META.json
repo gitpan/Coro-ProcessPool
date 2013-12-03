@@ -34,11 +34,12 @@
          "requires" : {
             "Const::Fast" : "0",
             "Coro" : "0",
+            "Guard" : "0",
             "String::Escape" : "0",
             "Sys::Info" : "0"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.03"
+   "version" : "0.04"
 }
