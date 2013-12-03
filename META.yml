@@ -23,4 +23,4 @@ requires:
   Guard: 0
   String::Escape: 0
   Sys::Info: 0
-version: 0.04
+version: 0.05
