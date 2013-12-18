@@ -8,12 +8,11 @@ use AnyEvent;
 use Coro;
 use Coro::Channel;
 use Coro::Storable qw(freeze thaw);
-use Guard qw(scope_guard);
 use MIME::Base64 qw(encode_base64 decode_base64);
 use Sys::Info;
 use Coro::ProcessPool::Process;
 
-our $VERSION = 0.05;
+our $VERSION = 0.06;
 
 if ($^O eq 'MSWin32') {
     die 'MSWin32 is not supported';
@@ -72,19 +71,29 @@ sub process {
     ref $args eq 'ARRAY' || croak 'expected ARRAY ref of arguments';
 
     my $proc;
+
+    # Start a new process if none are available and there are worker slots open
     if ($self->{procs}->size == 0 && $self->{num_procs} < $self->{max_procs}) {
         $proc = $self->start_proc;
     }
 
+    # Otherwise, wait for the next available process
     $proc = $self->{procs}->get unless defined $proc;
 
+    # Restart the process if the worker is exhausted
     if ($self->{max_reqs} > 0 && $proc->{processed} >= $self->{max_reqs}) {
         $self->kill_proc($proc);
         $proc = $self->start_proc;
     }
 
-    scope_guard { $self->{procs}->put($proc) };
+    # Send the task
     $proc->send($f, $args);
+
+    # Replace process in the pool as soon as result is ready on the connection
+    $proc->readable;
+    $self->{procs}->put($proc);
+
+    # Collect and return the result
     return $proc->recv;
 }
 

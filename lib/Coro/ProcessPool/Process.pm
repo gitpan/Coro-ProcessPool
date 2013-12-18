@@ -144,4 +144,10 @@ sub recv {
     }
 }
 
+sub readable {
+    my $self = shift;
+    croak 'not running' unless $self->is_running;
+    $self->{from_child}->readable;
+}
+
 1;
