@@ -4,7 +4,7 @@
       "\"Jeff Ober\" <\"jeffober@gmail.com\">"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "unknown"
    ],
@@ -36,10 +36,11 @@
             "Coro" : "0",
             "Guard" : "0",
             "String::Escape" : "0",
-            "Sys::Info" : "0"
+            "Sys::Info" : "0",
+            "Test::TinyMocker" : "0"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.06"
+   "version" : "0.07"
 }
