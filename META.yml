@@ -24,4 +24,4 @@ requires:
   String::Escape: 0
   Sys::Info: 0
   Test::TinyMocker: 0
-version: 0.08
+version: 0.09
