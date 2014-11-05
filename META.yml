@@ -21,7 +21,8 @@ requires:
   Const::Fast: '0'
   Coro: '0'
   Guard: '0'
+  Storable: '2.05'
   String::Escape: '0'
   Sys::Info: '0'
   Test::TinyMocker: '0'
-version: 0.12_01
+version: 0.12_02
