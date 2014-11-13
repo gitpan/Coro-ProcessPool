@@ -34,13 +34,15 @@
          "requires" : {
             "Const::Fast" : "0",
             "Coro" : "0",
+            "Devel::StackTrace" : "0",
             "Guard" : "0",
+            "Module::Load" : "0",
             "Storable" : "2.05",
             "String::Escape" : "0",
             "Test::TinyMocker" : "0"
          }
       }
    },
-   "release_status" : "stable",
-   "version" : "0.14"
+   "release_status" : "testing",
+   "version" : "0.14_01"
 }

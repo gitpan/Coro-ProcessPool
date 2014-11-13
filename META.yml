@@ -20,8 +20,10 @@ no_index:
 requires:
   Const::Fast: '0'
   Coro: '0'
+  Devel::StackTrace: '0'
   Guard: '0'
+  Module::Load: '0'
   Storable: '2.05'
   String::Escape: '0'
   Test::TinyMocker: '0'
-version: '0.14'
+version: 0.14_01
