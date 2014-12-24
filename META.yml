@@ -27,4 +27,4 @@ requires:
   Storable: '2.05'
   String::Escape: '0'
   Test::TinyMocker: '0'
-version: 0.15_02
+version: '0.16'
